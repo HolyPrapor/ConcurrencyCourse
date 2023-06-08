@@ -13,7 +13,7 @@
 enum State {
     HUNGRY = 0,
     EATING = 1,
-    THINKING = 2
+    THINKING = 2,
 };
 
 class Philosopher {
@@ -46,7 +46,7 @@ public:
         std::stringstream ss;
 
         ss << "Philosopher #" << seat_number_ << "\n";
-        ss << "- State: " << state_ << "\n";
+        ss << "- State: " << StateToString(state_) << "\n";
         ss << "- Consumed " << GetMealsCount() << " meals\n";
 
         return ss.str();
@@ -83,6 +83,15 @@ private:
 
     Waiter& GetWaiter() {
         return table_.GetWaiter();
+    }
+
+    static std::string StateToString(State state) {
+        switch (state) {
+            case State::HUNGRY: return "Hungry";
+            case State::EATING: return "Eating";
+            case State::THINKING: return "Thinking";
+        }
+        return std::to_string(state);
     }
 
     int seat_number_;
