@@ -1,11 +1,12 @@
 # ninja log v5
-0	693	1686241289293342314	CMakeFiles/DiningPhilosophers.dir/main.cpp.o	22a691e53d22609f
-1	505	1686241289103342348	CMakeFiles/DiningPhilosophers.dir/Philosopher.cpp.o	e3b5d8a68ba14253
+0	734	1686241642903305831	CMakeFiles/DiningPhilosophers.dir/main.cpp.o	22a691e53d22609f
+1	579	1686241642743305846	CMakeFiles/DiningPhilosophers.dir/Philosopher.cpp.o	e3b5d8a68ba14253
 1	178	1686240373383440872	CMakeFiles/DiningPhilosophers.dir/Plate.cpp.o	62b0701022976bd1
+734	814	1686241642983305824	DiningPhilosophers	4815c2f3d4b4bc47
 0	290	1686240253373450880	CMakeFiles/DiningPhilosophers.dir/Fork.cpp.o	3857bf2a74faac5b
-693	777	1686241289373342299	DiningPhilosophers	b01f53bef5487487
 0	368	1686240373573440847	CMakeFiles/DiningPhilosophers.dir/Table.cpp.o	2a7ca7c374084ae2
 1	367	1686241642533305865	CMakeFiles/DiningPhilosophers.dir/StarveFreeSharedMutex.cpp.o	2084d1cd8e27a38c
-1	579	1686241642743305846	CMakeFiles/DiningPhilosophers.dir/Philosopher.cpp.o	e3b5d8a68ba14253
-0	734	1686241642903305831	CMakeFiles/DiningPhilosophers.dir/main.cpp.o	22a691e53d22609f
-734	814	1686241642983305824	DiningPhilosophers	4815c2f3d4b4bc47
+0	9	1686241916253253876	build.ninja	b948c14c52dbe746
+0	365	1686241916623253847	CMakeFiles/DiningPhilosophers.dir/Util/WriterStarveFreeSharedMutex.cpp.o	4bbdfc5c9b36366e
+0	718	1686241916983253823	CMakeFiles/DiningPhilosophers.dir/main.cpp.o	22a691e53d22609f
+718	794	1686241917053253816	DiningPhilosophers	56bdd505bbc69981

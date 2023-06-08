@@ -79,11 +79,11 @@ build CMakeFiles/DiningPhilosophers.dir/Philosopher.cpp.o: CXX_COMPILER__DiningP
   OBJECT_DIR = CMakeFiles/DiningPhilosophers.dir
   OBJECT_FILE_DIR = CMakeFiles/DiningPhilosophers.dir
 
-build CMakeFiles/DiningPhilosophers.dir/StarveFreeSharedMutex.cpp.o: CXX_COMPILER__DiningPhilosophers_Debug /home/zeliboba/projects/University/ComputerScienceCourse/DiningPhilosophers/StarveFreeSharedMutex.cpp || cmake_object_order_depends_target_DiningPhilosophers
-  DEP_FILE = CMakeFiles/DiningPhilosophers.dir/StarveFreeSharedMutex.cpp.o.d
+build CMakeFiles/DiningPhilosophers.dir/Util/WriterStarveFreeSharedMutex.cpp.o: CXX_COMPILER__DiningPhilosophers_Debug /home/zeliboba/projects/University/ComputerScienceCourse/DiningPhilosophers/Util/WriterStarveFreeSharedMutex.cpp || cmake_object_order_depends_target_DiningPhilosophers
+  DEP_FILE = CMakeFiles/DiningPhilosophers.dir/Util/WriterStarveFreeSharedMutex.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/DiningPhilosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/DiningPhilosophers.dir
+  OBJECT_FILE_DIR = CMakeFiles/DiningPhilosophers.dir/Util
 
 
 # =============================================================================
@@ -93,7 +93,7 @@ build CMakeFiles/DiningPhilosophers.dir/StarveFreeSharedMutex.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable DiningPhilosophers
 
-build DiningPhilosophers: CXX_EXECUTABLE_LINKER__DiningPhilosophers_Debug CMakeFiles/DiningPhilosophers.dir/main.cpp.o CMakeFiles/DiningPhilosophers.dir/Fork.cpp.o CMakeFiles/DiningPhilosophers.dir/Table.cpp.o CMakeFiles/DiningPhilosophers.dir/Plate.cpp.o CMakeFiles/DiningPhilosophers.dir/Philosopher.cpp.o CMakeFiles/DiningPhilosophers.dir/StarveFreeSharedMutex.cpp.o
+build DiningPhilosophers: CXX_EXECUTABLE_LINKER__DiningPhilosophers_Debug CMakeFiles/DiningPhilosophers.dir/main.cpp.o CMakeFiles/DiningPhilosophers.dir/Fork.cpp.o CMakeFiles/DiningPhilosophers.dir/Table.cpp.o CMakeFiles/DiningPhilosophers.dir/Plate.cpp.o CMakeFiles/DiningPhilosophers.dir/Philosopher.cpp.o CMakeFiles/DiningPhilosophers.dir/Util/WriterStarveFreeSharedMutex.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/DiningPhilosophers.dir
   POST_BUILD = :

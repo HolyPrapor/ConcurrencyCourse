@@ -5,7 +5,7 @@
 #include <shared_mutex>
 #include "Philosopher.h"
 #include "Table.h"
-#include "WriterStarveFreeSharedMutex.h"
+#include "Util/WriterStarveFreeSharedMutex.h"
 
 int main() {
     // create a table with 5 seats
