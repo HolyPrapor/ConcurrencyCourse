@@ -8,32 +8,40 @@
 
 #include <thread>
 #include <shared_mutex>
+#include <mutex>
+#include <condition_variable>
 
 // Inconsistent naming with the rest of the project to be able to use std::shared_lock and std::unique_lock
 class WriterStarveFreeSharedMutex {
-    std::shared_mutex mutex_;
+    std::shared_mutex shared_mutex_;
+    std::mutex mtx_;
+    std::condition_variable cv_;
     std::atomic<bool> write_lock_pending_{false};
 
 public:
     void lock() {
+        std::unique_lock<std::mutex> lock(mtx_);
         write_lock_pending_.store(true);
-        mutex_.lock();
+        shared_mutex_.lock();
         write_lock_pending_.store(false);
+        cv_.notify_all();
     }
 
     void unlock() {
-        mutex_.unlock();
+        shared_mutex_.unlock();
     }
 
     void lock_shared() {
-        while (write_lock_pending_.load()) {
-            std::this_thread::yield();
+        {
+            std::unique_lock<std::mutex> lock(mtx_);
+            cv_.wait(lock, [this]() { return !write_lock_pending_.load(); });
         }
-        mutex_.lock_shared();
+
+        shared_mutex_.lock_shared();
     }
 
     void unlock_shared() {
-        mutex_.unlock_shared();
+        shared_mutex_.unlock_shared();
     }
 };
 
