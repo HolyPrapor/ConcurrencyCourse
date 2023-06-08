@@ -19,17 +19,7 @@ enum State {
 class Philosopher {
 public:
     explicit Philosopher(Table& table, int seat_number) :
-    Philosopher(
-            table.TakePlate(seat_number),
-            table.TakeLeftFork(seat_number),
-            table.TakeRightFork(seat_number),
-            seat_number
-    ) {}
-
-    explicit Philosopher(Plate& plate, Fork& left_fork, Fork& right_fork, int seat_number) :
-        plate_(plate),
-        left_fork_(left_fork),
-        right_fork_(right_fork),
+        table_(table),
         seat_number_(seat_number) {}
 
     void Eat() {
@@ -67,11 +57,11 @@ private:
     void ReleaseForks();
 
     void EatWithForks() {
-        plate_.Access();
+        GetPlate().Access();
         meals_count_++;
         state_ = State::EATING;
         WaitForRandomTime();
-        plate_.Release();
+        GetPlate().Release();
     }
 
     void WaitForRandomTime() {
@@ -79,10 +69,24 @@ private:
         std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
     }
 
+    Plate& GetPlate() {
+        return table_.TakePlate(seat_number_);
+    }
+
+    Fork& GetLeftFork() {
+        return table_.TakeLeftFork(seat_number_);
+    }
+
+    Fork& GetRightFork() {
+        return table_.TakeRightFork(seat_number_);
+    }
+
+    Waiter& GetWaiter() {
+        return table_.GetWaiter();
+    }
+
     int seat_number_;
-    Plate& plate_;
-    Fork& left_fork_;
-    Fork& right_fork_;
+    Table& table_;
     State state_ = State::HUNGRY;
 
     int meals_count_ = 0;

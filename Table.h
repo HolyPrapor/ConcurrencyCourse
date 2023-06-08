@@ -8,12 +8,17 @@
 #include <mutex>
 #include <vector>
 #include <sstream>
+#include "Waiter.h"
 #include "Fork.h"
 #include "Plate.h"
 
 class Table {
 public:
     explicit Table(int num_seats) : num_seats_(num_seats), forks_(CreateForks(num_seats)), plates_(num_seats) {
+    }
+
+    Waiter& GetWaiter() {
+        return waiter_;
     }
 
     Fork& TakeLeftFork(int seat) {
@@ -61,6 +66,7 @@ private:
     const int num_seats_;
     std::vector<Fork> forks_;
     std::vector<Plate> plates_;
+    Waiter waiter_;
 
     void CheckForUnexpected(int seat) const {
         if (seat >= num_seats_)

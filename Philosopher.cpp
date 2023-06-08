@@ -5,19 +5,15 @@
 #include "Philosopher.h"
 
 void Philosopher::AcquireForks() {
-    bool shouldSwap = this->left_fork_.GetForkNumber() < this->right_fork_.GetForkNumber();
-    auto &lower = shouldSwap ? this->left_fork_ : this->right_fork_;
-    auto &higher = shouldSwap ? this->right_fork_ : this->left_fork_;
+    GetWaiter().AskPermissionToEat(GetSeatNumber());
 
-    lower.Take(this->GetSeatNumber());
-    higher.Take(this->GetSeatNumber());
+    GetLeftFork().Take(GetSeatNumber());
+    GetRightFork().Take(GetSeatNumber());
 }
 
 void Philosopher::ReleaseForks() {
-    bool shouldSwap = this->left_fork_.GetForkNumber() < this->right_fork_.GetForkNumber();
-    auto &lower = shouldSwap ? this->left_fork_ : this->right_fork_;
-    auto &higher = shouldSwap ? this->right_fork_ : this->left_fork_;
+    GetLeftFork().Put();
+    GetRightFork().Put();
 
-    lower.Put();
-    higher.Put();
+    GetWaiter().FinishedEating(GetSeatNumber());
 }
