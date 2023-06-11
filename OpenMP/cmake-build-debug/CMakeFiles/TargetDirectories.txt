@@ -1,0 +1,3 @@
+/home/zeliboba/projects/University/ComputerScienceCourse/OpenMP/cmake-build-debug/CMakeFiles/OpenMP.dir
+/home/zeliboba/projects/University/ComputerScienceCourse/OpenMP/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/zeliboba/projects/University/ComputerScienceCourse/OpenMP/cmake-build-debug/CMakeFiles/rebuild_cache.dir

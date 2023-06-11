@@ -27,7 +27,7 @@ public:
     }
 
 private:
-    std::queue<int> queue_;
+    std::queue<int> queue_; // can be replaced with mpmc lockfree queue, which will improve performance
     std::mutex mtx_;
     std::condition_variable cv_;
 };
