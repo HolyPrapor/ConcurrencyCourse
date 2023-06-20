@@ -8,7 +8,7 @@
 
 Each row corresponds to a separate run of Game of Life with big field (10000x10000) with a different number of processes.
 
-Here is the plot of it: ![Processes vs Elapsed Time](https://github.com/HolyPrapor/ConcurrencyCourse/edit/master/MPI/MPI_data.png).
+Here is the plot of it: ![Processes vs Elapsed Time](MPI_data.png).
 
 - `# Processes`: refers to the number of separate processes that the Game of Life simulation is distributed across.
 - `User (s)`: refers to the total amount of CPU time spent in user-mode within a process. This is the time spent performing program actions, excluding time the CPU spent performing system calls.
